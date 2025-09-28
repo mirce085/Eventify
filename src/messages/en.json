@@ -1,0 +1,21 @@
+{
+  "hero": {
+    "title": "Don’t miss out!",
+    "subtitle": "Explore the <b>vibrant events</b> happening locally and globally.",
+    "searchPlaceholder": "Search Events, Categories, Location...",
+    "countryPlaceholder": "Select country"
+  },
+  "events": {
+    "listTitle": "Events",
+    "view": "View",
+    "free": "Free",
+    "back": "Back to events",
+    "save": "Save event",
+    "saved": "Saved",
+    "organizer": "Organizer",
+    "about": "About this event",
+    "tickets": "Tickets",
+    "capacity": "Cap",
+    "left": "Left"
+  }
+}
