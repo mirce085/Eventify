@@ -54,7 +54,7 @@ export default function EventifyHeader() {
 
                     <div className="hidden md:flex items-center gap-4">
                         <Link
-                            href="/create"
+                            href="/dashboard/events/new"
                             className="text-white/90 hover:text-white transition-colors text-[17px]"
                         >
                             {t('createEvent')}

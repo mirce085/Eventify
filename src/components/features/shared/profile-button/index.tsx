@@ -9,13 +9,12 @@ export function ProfileButton() {
     const { data: session, status } = useSession();
     const t = useTranslations('navigation');
 
-
     if (status === "authenticated") {
         return (
             <div className="flex items-center gap-2">
                 <Link href="/dashboard">
                     {session.user?.image ? (
-                        <Image
+                        <img
                             src={session.user?.image || ""}
                             alt="Profile"
                             width={40}
@@ -33,6 +32,7 @@ export function ProfileButton() {
     } else {
         return (
             <>
+
                 <Link
                     href="auth/signin"
                     className="text-white/90 hover:text-white transition-colors text-[17px]"

@@ -1,12 +1,10 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { PrismaAdapter } from "@auth/prisma-adapter";
 import { compare } from "bcryptjs";
 import prisma from "@/prisma/client";
 
 export const authOptions = {
-    adapter: PrismaAdapter(prisma),
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID as string,
@@ -48,21 +46,12 @@ export const authOptions = {
             }
         })
     ],
-    callbacks: {
-        async session({ session, user }) {
-            // Add user id to session
-            if (session.user) {
-                session.user.id = user.id;
-            }
-            return session;
-        }
-    },
     pages: {
         signIn: '/auth/signin',
         // You can define custom error, verification pages too
     },
     session: {
-        strategy: "jwt",
+        strategy: "jwt" as const,
     },
 };
 

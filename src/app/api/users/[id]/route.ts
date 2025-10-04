@@ -11,15 +11,6 @@ export async function GET(
     try {
         const user = await prisma.user.findUnique({
             where: { id: params.id },
-            select: {
-                id: true,
-                name: true,
-                email: true,
-                image: true,
-                favoriteEventIds: true,
-                createdAt: true,
-                updatedAt: true,
-            },
             include: {
                 events: true, // Include user's events
             },
@@ -47,19 +38,17 @@ export async function PUT(
 ) {
     try {
         const body = await request.json();
-        const { name, email, image, password, favoriteEventIds } = body;
+        const { name, email, image, password } = body;
 
         const updateData: {
             name?: string;
             email?: string;
             image?: string;
-            favoriteEventIds?: string[];
             passwordHash?: string;
         } = {
             name,
             email,
             image,
-            favoriteEventIds,
         };
 
         if (password) {
@@ -74,7 +63,6 @@ export async function PUT(
                 name: true,
                 email: true,
                 image: true,
-                favoriteEventIds: true,
                 createdAt: true,
                 updatedAt: true,
             },
