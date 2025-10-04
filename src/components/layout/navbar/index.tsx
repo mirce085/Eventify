@@ -4,14 +4,14 @@ import {useState} from "react";
 import Link from "next/link";
 import {Ticket} from "lucide-react";
 import {LanguageSelector} from "@/components/features/shared/language-selector";
+import {ProfileButton} from "@/components/features/shared/profile-button";
 import { useTranslations } from 'next-intl';
-
 
 export default function EventifyHeader() {
     const t = useTranslations('navigation');
     const [open, setOpen] = useState(false);
-    const primaryBg = "bg-[#2c2a38]"; // deep slate / charcoal
-    const brandYellow = "#f6d44b"; // warm yellow close to screenshot
+    const primaryBg = "bg-[#2c2a38]";
+    const brandYellow = "#f6d44b";
 
     const NavLink = ({href, children, active = false}: {
         href: string;
@@ -59,22 +59,14 @@ export default function EventifyHeader() {
                         >
                             {t('createEvent')}
                         </Link>
-                        <Link
-                            href="auth/signin"
-                            className="text-white/90 hover:text-white transition-colors text-[17px]"
-                        >
-                            {t('login')}
-                        </Link>
-                        <Link
-                            href="auth/signup"
-                            className="inline-flex items-center rounded-xl px-4 py-2 text-[16px] font-semibold text-[#1f1d2a] shadow-sm"
-                            style={{background: brandYellow}}
-                        >
-                            {t('signUp')}
-                        </Link>
+
+                        {/* Replace static buttons with ProfileButton */}
+                        <ProfileButton />
+
                         <LanguageSelector/>
                     </div>
 
+                    {/* Mobile menu button */}
                     <button
                         className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md ring-1 ring-white/10 text-white/90"
                         onClick={() => setOpen((s) => !s)}
@@ -88,6 +80,7 @@ export default function EventifyHeader() {
                 </div>
             </div>
 
+            {/* Mobile menu */}
             {open && (
                 <div className="md:hidden border-t border-white/10" style={{background: "rgba(0,0,0,0.15)"}}>
                     <div className="mx-auto max-w-7xl px-4 py-4 space-y-3">
@@ -97,14 +90,11 @@ export default function EventifyHeader() {
                         <Link href="/contact" className="block text-white/90 text-[17px]">{t('contact')}</Link>
                         <div className="h-px bg-white/10 my-2"/>
                         <Link href="/create" className="block text-white/90 text-[17px]">{t('createEvent')}</Link>
-                        <Link href="/signin" className="block text-white/90 text-[17px]">{t('login')}</Link>
-                        <Link
-                            href="/signup"
-                            className="inline-flex items-center rounded-xl px-4 py-2 text-[16px] font-semibold text-[#1f1d2a]"
-                            style={{background: brandYellow}}
-                        >
-                            {t('signUp')}
-                        </Link>
+
+                        {/* Mobile ProfileButton */}
+                        <div className="pt-2">
+                            <ProfileButton />
+                        </div>
                     </div>
                 </div>
             )}
