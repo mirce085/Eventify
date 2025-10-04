@@ -6,9 +6,10 @@ export async function GET(
     { params }: { params: { id: string } }
 ) {
     try {
+        const { id } = await params;
         const event = await prisma.event.findUnique({
             where: {
-                id: params.id,
+                id: id,
             },
             include: {
                 organizer: {
@@ -80,13 +81,10 @@ export async function PUT(
                 description: data.description,
                 startAt: new Date(data.startAt),
                 endAt: new Date(data.endAt),
-                city: data.city,
-                countryCode: data.countryCode,
-                address: data.address,
+                location: data.location,
                 coverImage: data.coverImage,
                 price: data.price ? parseFloat(data.price) : null,
                 currency: data.currency,
-                status: data.status,
             },
         });
 
