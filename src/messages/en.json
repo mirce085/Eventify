@@ -17,5 +17,15 @@
     "tickets": "Tickets",
     "capacity": "Cap",
     "left": "Left"
+  },
+  "navigation": {
+    "home": "Home",
+    "events": "Events",
+    "about": "About",
+    "contact": "Contact",
+    "createEvent": "Create Event",
+    "login": "Login",
+    "signUp": "Sign Up",
+    "toggleMenu": "Toggle menu"
   }
 }

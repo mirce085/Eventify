@@ -31,15 +31,15 @@ export function LanguageSelector() {
             onValueChange={handleLanguageChange}
             defaultValue={defaultLocale}
         >
-            <SelectTrigger className="bg-black text-white">
+            <SelectTrigger className="bg-blue text-white">
                 <SelectValue placeholder="Select a language" />
                 <Globe />
             </SelectTrigger>
-            <SelectContent className="bg-black text-white">
-                <SelectItem value="en" className="text-white">
+            <SelectContent className="bg-blue text-white">
+                <SelectItem value="en" className="bg-blue text-white">
                     English
                 </SelectItem>
-                <SelectItem value="ru" className="text-white">
+                <SelectItem value="ru" className="bg-blue text-white">
                     Русский
                 </SelectItem>
             </SelectContent>

@@ -17,5 +17,15 @@
     "tickets": "Билеты",
     "capacity": "Вмест.",
     "left": "Осталось"
+  },
+  "navigation": {
+    "home": "Главная",
+    "events": "События",
+    "about": "О нас",
+    "contact": "Контакты",
+    "createEvent": "Создать событие",
+    "login": "Вход",
+    "signUp": "Регистрация",
+    "toggleMenu": "Переключить меню"
   }
 }

@@ -4,9 +4,11 @@ import {useState} from "react";
 import Link from "next/link";
 import {Ticket} from "lucide-react";
 import {LanguageSelector} from "@/components/features/shared/language-selector";
+import { useTranslations } from 'next-intl';
 
 
 export default function EventifyHeader() {
+    const t = useTranslations('navigation');
     const [open, setOpen] = useState(false);
     const primaryBg = "bg-[#2c2a38]"; // deep slate / charcoal
     const brandYellow = "#f6d44b"; // warm yellow close to screenshot
@@ -43,10 +45,10 @@ export default function EventifyHeader() {
 
                     <nav className="hidden md:block">
                         <ul className="flex items-center gap-6">
-                            <NavLink href="/" active>Home</NavLink>
-                            <NavLink href="/events">Events</NavLink>
-                            <NavLink href="/about">About</NavLink>
-                            <NavLink href="/contact">Contact</NavLink>
+                            <NavLink href="/" active>{t('home')}</NavLink>
+                            <NavLink href="/events">{t('events')}</NavLink>
+                            <NavLink href="/about">{t('about')}</NavLink>
+                            <NavLink href="/contact">{t('contact')}</NavLink>
                         </ul>
                     </nav>
 
@@ -55,20 +57,20 @@ export default function EventifyHeader() {
                             href="/create"
                             className="text-white/90 hover:text-white transition-colors text-[17px]"
                         >
-                            Create Event
+                            {t('createEvent')}
                         </Link>
                         <Link
                             href="auth/signin"
                             className="text-white/90 hover:text-white transition-colors text-[17px]"
                         >
-                            Login
+                            {t('login')}
                         </Link>
                         <Link
                             href="auth/signup"
                             className="inline-flex items-center rounded-xl px-4 py-2 text-[16px] font-semibold text-[#1f1d2a] shadow-sm"
                             style={{background: brandYellow}}
                         >
-                            Sign Up
+                            {t('signUp')}
                         </Link>
                         <LanguageSelector/>
                     </div>
@@ -89,19 +91,19 @@ export default function EventifyHeader() {
             {open && (
                 <div className="md:hidden border-t border-white/10" style={{background: "rgba(0,0,0,0.15)"}}>
                     <div className="mx-auto max-w-7xl px-4 py-4 space-y-3">
-                        <Link href="/" className="block text-white/90 text-[17px]">Home</Link>
-                        <Link href="/events" className="block text-white/90 text-[17px]">Events</Link>
-                        <Link href="/about" className="block text-white/90 text-[17px]">About</Link>
-                        <Link href="/contact" className="block text-white/90 text-[17px]">Contact</Link>
+                        <Link href="/" className="block text-white/90 text-[17px]">{t('home')}</Link>
+                        <Link href="/events" className="block text-white/90 text-[17px]">{t('events')}</Link>
+                        <Link href="/about" className="block text-white/90 text-[17px]">{t('about')}</Link>
+                        <Link href="/contact" className="block text-white/90 text-[17px]">{t('contact')}</Link>
                         <div className="h-px bg-white/10 my-2"/>
-                        <Link href="/create" className="block text-white/90 text-[17px]">Create Event</Link>
-                        <Link href="/signin" className="block text-white/90 text-[17px]">Login</Link>
+                        <Link href="/create" className="block text-white/90 text-[17px]">{t('createEvent')}</Link>
+                        <Link href="/signin" className="block text-white/90 text-[17px]">{t('login')}</Link>
                         <Link
                             href="/signup"
                             className="inline-flex items-center rounded-xl px-4 py-2 text-[16px] font-semibold text-[#1f1d2a]"
                             style={{background: brandYellow}}
                         >
-                            Sign Up
+                            {t('signUp')}
                         </Link>
                     </div>
                 </div>
