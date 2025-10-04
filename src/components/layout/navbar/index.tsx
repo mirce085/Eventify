@@ -46,27 +46,16 @@ export default function EventifyHeader() {
                     <nav className="hidden md:block">
                         <ul className="flex items-center gap-6">
                             <NavLink href="/" active>{t('home')}</NavLink>
-                            <NavLink href="/events">{t('events')}</NavLink>
                             <NavLink href="/about">{t('about')}</NavLink>
                             <NavLink href="/contact">{t('contact')}</NavLink>
                         </ul>
                     </nav>
 
                     <div className="hidden md:flex items-center gap-4">
-                        <Link
-                            href="/dashboard/events/new"
-                            className="text-white/90 hover:text-white transition-colors text-[17px]"
-                        >
-                            {t('createEvent')}
-                        </Link>
-
-                        {/* Replace static buttons with ProfileButton */}
                         <ProfileButton />
-
                         <LanguageSelector/>
                     </div>
 
-                    {/* Mobile menu button */}
                     <button
                         className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md ring-1 ring-white/10 text-white/90"
                         onClick={() => setOpen((s) => !s)}
@@ -80,18 +69,14 @@ export default function EventifyHeader() {
                 </div>
             </div>
 
-            {/* Mobile menu */}
             {open && (
                 <div className="md:hidden border-t border-white/10" style={{background: "rgba(0,0,0,0.15)"}}>
                     <div className="mx-auto max-w-7xl px-4 py-4 space-y-3">
                         <Link href="/" className="block text-white/90 text-[17px]">{t('home')}</Link>
-                        <Link href="/events" className="block text-white/90 text-[17px]">{t('events')}</Link>
                         <Link href="/about" className="block text-white/90 text-[17px]">{t('about')}</Link>
                         <Link href="/contact" className="block text-white/90 text-[17px]">{t('contact')}</Link>
                         <div className="h-px bg-white/10 my-2"/>
-                        <Link href="/create" className="block text-white/90 text-[17px]">{t('createEvent')}</Link>
 
-                        {/* Mobile ProfileButton */}
                         <div className="pt-2">
                             <ProfileButton />
                         </div>

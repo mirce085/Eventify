@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import {useTranslations} from "next-intl";
+import SignOutButton from "@/components/features/shared/sign-out-button";
 
 export function ProfileButton() {
     const { data: session, status } = useSession();
@@ -12,7 +13,14 @@ export function ProfileButton() {
     if (status === "authenticated") {
         return (
             <div className="flex items-center gap-2">
-                <Link href="/dashboard">
+                <Link
+                    href="/dashboard/events/new"
+                    className="text-white/90 hover:text-white transition-colors text-[17px]"
+                >
+                    {t('createEvent')}
+                </Link>
+
+                <Link href="/">
                     {session.user?.image ? (
                         <img
                             src={session.user?.image || ""}
@@ -27,12 +35,13 @@ export function ProfileButton() {
                         </div>
                     )}
                 </Link>
+
+                <SignOutButton/>
             </div>
         );
     } else {
         return (
             <>
-
                 <Link
                     href="auth/signin"
                     className="text-white/90 hover:text-white transition-colors text-[17px]"
