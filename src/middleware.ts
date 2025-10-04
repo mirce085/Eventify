@@ -8,39 +8,38 @@ const intlMiddleware = createMiddleware({
     localePrefix: 'as-needed',
 });
 
+function buildUrl(request: NextRequest, pathname: string) {
+    const url = request.nextUrl.clone();
+    url.pathname = pathname;
+    return url;
+}
+
 export async function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
-    // Get the token to check authentication status
     const token = await getToken({
         req: request,
         secret: process.env.NEXTAUTH_SECRET
     });
 
-    // Protected routes that require authentication
     const protectedRoutes = ['/dashboard'];
-
-    // Check if current path is a protected route
     const isProtectedRoute = protectedRoutes.some(route =>
         pathname.startsWith(route) || pathname.includes(route)
     );
 
-    // If accessing protected route without authentication
+    const isRu = pathname.startsWith('/ru');
+    const withLocale = (p: string) => (isRu ? `/ru${p}` : p);
+
     if (isProtectedRoute && !token) {
-        // Extract locale from pathname or use default
-        const locale = pathname.startsWith('/ru') ? 'ru' : '';
-        const signInUrl = new URL(`/${locale}/auth/signin`, request.url);
+        const signInUrl = buildUrl(request, withLocale('/auth/signin'));
         return NextResponse.redirect(signInUrl);
     }
 
-    // If authenticated user tries to access auth pages, redirect to dashboard
     if (token && (pathname.includes('/auth/signin') || pathname.includes('/auth/signup'))) {
-        const locale = pathname.startsWith('/ru') ? 'ru' : '';
-        const dashboardUrl = new URL(`/${locale}/dashboard`, request.url);
+        const dashboardUrl = buildUrl(request, withLocale('/dashboard'));
         return NextResponse.redirect(dashboardUrl);
     }
 
-    // Apply internationalization middleware
     return intlMiddleware(request);
 }
 

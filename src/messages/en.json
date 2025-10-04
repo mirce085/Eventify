@@ -27,5 +27,186 @@
     "login": "Login",
     "signUp": "Sign Up",
     "toggleMenu": "Toggle menu"
+  },
+  "about": {
+    "meta": {
+      "title": "About Eventify",
+      "description": "Learn about Eventify — the modern marketplace to discover, host, and manage events with secure ticketing."
+    },
+    "title": "About Eventify",
+    "subtitle": "Eventify is the event marketplace that connects organizers and attendees. Discover unforgettable experiences, host your own events, and sell tickets securely — all in one place.",
+    "mission": {
+      "title": "Our Mission",
+      "body": "We make live experiences accessible and effortless. From intimate workshops to large-scale conferences and festivals, Eventify helps creators build, market, and grow their events while attendees enjoy a smooth discovery and checkout experience."
+    },
+    "highlights": {
+      "title": "What you can do with Eventify",
+      "discover": {
+        "title": "Discover great events",
+        "desc": "Find concerts, conferences, meetups, and more with powerful search, categories, and personalized recommendations."
+      },
+      "host": {
+        "title": "Host and manage",
+        "desc": "Create event pages, set ticket tiers, manage capacity, and communicate with attendees with built-in tools."
+      },
+      "tickets": {
+        "title": "Secure ticketing",
+        "desc": "Fast checkout, QR-based entry, and fraud-resistant ticketing built for reliability at scale."
+      },
+      "analytics": {
+        "title": "Insights and analytics",
+        "desc": "Track sales, traffic, and attendance to optimize your marketing and maximize revenue."
+      },
+      "marketplace": {
+        "title": "Vendor marketplace",
+        "desc": "Connect with partners, sponsors, and vendors to enhance your event experience."
+      }
+    },
+    "stats": {
+      "title": "By the numbers",
+      "tickets": {
+        "value": "500k+",
+        "label": "Tickets issued"
+      },
+      "organizers": {
+        "value": "10k+",
+        "label": "Active organizers"
+      },
+      "countries": {
+        "value": "35+",
+        "label": "Countries served"
+      }
+    },
+    "cta": {
+      "contact": "Contact us"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact Eventify",
+      "description": "Get in touch with Eventify for support, partnerships, press, and feedback."
+    },
+    "title": "Contact us",
+    "subtitle": "We’re here to help with anything related to your events, tickets, or account.",
+    "support": {
+      "title": "Customer Support",
+      "desc": "Questions about tickets or your account? Our support team is ready to assist.",
+      "cta": "Email support"
+    },
+    "business": {
+      "title": "Partnerships",
+      "desc": "Let’s team up. Partnerships, integrations, or sponsorships — we’d love to talk.",
+      "cta": "Email partnerships"
+    },
+    "press": {
+      "title": "Press & Media",
+      "desc": "Media inquiries and press opportunities.",
+      "cta": "Email press"
+    },
+    "sales": {
+      "title": "Sales",
+      "desc": "Looking for a solution for large or complex events? Talk to our sales team."
+    },
+    "feedback": {
+      "title": "Product Feedback",
+      "desc": "Share ideas or report issues to help us improve Eventify."
+    }
+  },
+  "footer": {
+    "tagline": "Discover, host, and manage events with secure ticketing.",
+    "links": {
+      "title": "Quick links",
+      "home": "Home",
+      "about": "About",
+      "contact": "Contact",
+      "createEvent": "Create Event"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "rights": "All rights reserved."
+  },
+  "legal": {
+    "privacy": {
+      "meta": {
+        "title": "Privacy Policy",
+        "description": "Learn how Eventify collects, uses, and protects your data."
+      },
+      "title": "Privacy Policy",
+      "intro": "This Privacy Policy explains how Eventify collects, uses, and protects your information when you use our services.",
+      "updated": "Last updated: October 4, 2025",
+      "sections": {
+        "collection": {
+          "title": "Information we collect",
+          "body": "We collect information you provide (like name, email, profile details), transactional data (tickets purchased, payments), and usage data (device, log, and analytics data) to operate and improve Eventify."
+        },
+        "use": {
+          "title": "How we use information",
+          "body": "We use your information to provide and improve our services, process payments, prevent fraud, personalize content, and communicate with you about your account and events."
+        },
+        "sharing": {
+          "title": "How we share information",
+          "body": "We may share data with event organizers, service providers, payment processors, or when required by law. We do not sell your personal data."
+        },
+        "security": {
+          "title": "Data security",
+          "body": "We implement technical and organizational measures designed to protect your data. No method of transmission or storage is 100% secure."
+        },
+        "rights": {
+          "title": "Your rights",
+          "body": "Depending on your location, you may have rights to access, correct, delete, or restrict processing of your data. Contact us for requests."
+        },
+        "contact": {
+          "title": "Contact us",
+          "body": "If you have questions about this policy or your data, please reach out."
+        }
+      },
+      "cta": {
+        "contact": "Contact support"
+      }
+    },
+    "terms": {
+      "meta": {
+        "title": "Terms of Service",
+        "description": "Understand the terms that govern your use of Eventify."
+      },
+      "title": "Terms of Service",
+      "intro": "These Terms of Service govern your use of Eventify. By using the platform, you agree to these terms.",
+      "updated": "Last updated: October 4, 2025",
+      "sections": {
+        "use": {
+          "title": "Use of the service",
+          "body": "You agree to use Eventify in compliance with applicable laws and refrain from abusive, fraudulent, or infringing activity."
+        },
+        "accounts": {
+          "title": "Accounts and security",
+          "body": "You are responsible for your account credentials and activity. Notify us immediately of any unauthorized use."
+        },
+        "tickets": {
+          "title": "Tickets, payments, and refunds",
+          "body": "Ticket sales, fees, and refund policies may vary by event and organizer. Eventify may facilitate payments but is not the seller unless stated otherwise."
+        },
+        "liability": {
+          "title": "Limitation of liability",
+          "body": "To the extent permitted by law, Eventify is not liable for indirect, incidental, or consequential damages arising from your use of the service."
+        },
+        "changes": {
+          "title": "Changes to these terms",
+          "body": "We may update these terms from time to time. Continued use after changes means you accept the updated terms."
+        },
+        "contact": {
+          "title": "Contact us",
+          "body": "For questions about these terms, please contact us."
+        }
+      },
+      "cta": {
+        "contact": "Contact support"
+      }
+    }
   }
 }

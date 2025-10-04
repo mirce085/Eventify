@@ -38,7 +38,7 @@ export function EventCard({ event, showEditButton = true }: { event: Event; show
                 )}
                 <div className={`mt-4 flex ${showEditButton ? 'justify-between' : 'justify-start'}`}>
                     <Link
-                        href={`/events/${event.id}`}
+                        href={showEditButton ? `/dashboard/events/${event.id}` : `/events/${event.id}`}
                         className="inline-flex items-center rounded-xl px-4 py-2 text-[16px] font-semibold text-[#1f1d2a] shadow-sm bg-[#f6d44b]"
                     >
                         View Details
