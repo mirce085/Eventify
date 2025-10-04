@@ -1,7 +1,7 @@
 import {Event} from "@prisma/client";
 import Link from "next/link";
 
-export function EventCard({ event }: { event: Event }) {
+export function EventCard({ event, showEditButton = true }: { event: Event; showEditButton?: boolean }) {
     const formatDate = (date: Date) => {
         return new Date(date).toLocaleDateString('en-US', {
             year: 'numeric',
@@ -36,19 +36,21 @@ export function EventCard({ event }: { event: Event }) {
                         {Number(event.price).toFixed(2)} {event.currency}
                     </p>
                 )}
-                <div className="mt-4 flex justify-between">
+                <div className={`mt-4 flex ${showEditButton ? 'justify-between' : 'justify-start'}`}>
                     <Link
-                        href={`/dashboard/events/${event.id}`}
+                        href={`/events/${event.id}`}
                         className="inline-flex items-center rounded-xl px-4 py-2 text-[16px] font-semibold text-[#1f1d2a] shadow-sm bg-[#f6d44b]"
                     >
                         View Details
                     </Link>
-                    <Link
-                        href={`/dashboard/events/${event.id}/edit`}
-                        className="inline-flex items-center rounded-xl px-4 py-2 text-[16px] font-semibold text-[#1f1d2a] shadow-sm bg-[#f6d44b]"
-                    >
-                        Edit
-                    </Link>
+                    {showEditButton && (
+                        <Link
+                            href={`/dashboard/events/${event.id}/edit`}
+                            className="inline-flex items-center rounded-xl px-4 py-2 text-[16px] font-semibold text-[#1f1d2a] shadow-sm bg-[#f6d44b]"
+                        >
+                            Edit
+                        </Link>
+                    )}
                 </div>
             </div>
         </div>
