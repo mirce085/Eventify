@@ -23,6 +23,68 @@
     "signOut": "Sign Out",
     "toggleMenu": "Toggle menu"
   },
+  "card": {
+    "viewDetails": "View Details",
+    "edit": "Edit"
+  },
+  "dashboard": {
+    "title": "Events Dashboard",
+    "backToDashboard": "Back to Dashboard",
+    "search": {
+      "placeholder": "Search events by title or location..."
+    },
+    "create": {
+      "button": "Create New Event",
+      "title": "Create New Event",
+      "submit": "Create Event",
+      "submitting": "Creating...",
+      "error": "Failed to create event. Please try again."
+    },
+    "edit": {
+      "title": "Edit Event",
+      "submit": "Update Event",
+      "submitting": "Updating...",
+      "backToEvent": "Back to Event",
+      "error": "Failed to update event. Please try again."
+    },
+    "fields": {
+      "title": "Event Title",
+      "coverImage": "Cover Image URL",
+      "startAt": "Start Date and Time",
+      "endAt": "End Date and Time",
+      "location": "Address",
+      "price": "Price",
+      "description": "Description"
+    },
+    "validation": {
+      "titleRequired": "Title is required",
+      "startRequired": "Start date is required",
+      "endRequired": "End date is required"
+    },
+    "details": {
+      "notFound": "Event not found",
+      "sectionTitle": "Event Details",
+      "when": "When",
+      "to": "to",
+      "where": "Where",
+      "price": "Price",
+      "organizer": "Organizer",
+      "description": "Description",
+      "noDescription": "No description provided.",
+      "edit": "Edit Event",
+      "delete": "Delete Event",
+      "confirmDelete": "Are you sure you want to delete this event?",
+      "deleteError": "Failed to delete event"
+    },
+    "common": {
+      "loading": "Loading...",
+      "error": "Error",
+      "errorOccurred": "An error occurred",
+      "unknown": "Unknown"
+    },
+    "loading": "Loading events...",
+    "empty": "No events found."
+  },
   "about": {
     "meta": {
       "title": "About Eventify",

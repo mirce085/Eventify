@@ -1,14 +1,17 @@
+"use client";
+
 import {Event} from "@prisma/client";
-import Link from "next/link";
+import {Link} from "@/i18n/navigation";
+import {useTranslations, useFormatter} from "next-intl";
 
 export function EventCard({ event, showEditButton = true }: { event: Event; showEditButton?: boolean }) {
-    const formatDate = (date: Date) => {
-        return new Date(date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
+    const t = useTranslations("card");
+    const format = useFormatter();
+
+    const formatDate = (date: Date | string) => {
+        return format.dateTime(new Date(date), {
+            dateStyle: "long",
+            timeStyle: "short"
         });
     };
 
@@ -25,30 +28,32 @@ export function EventCard({ event, showEditButton = true }: { event: Event; show
             )}
             <div className="p-4">
                 <h2 className="text-xl font-semibold mb-2">{event.title}</h2>
-                <p className="text-gray-600 mb-2">
-                    {event.location}
-                </p>
-                <p className="text-gray-700 mb-3">
-                    {formatDate(event.startAt)}
-                </p>
-                {event.price && (
+                <p className="text-gray-600 mb-2">{event.location}</p>
+                <p className="text-gray-700 mb-3">{formatDate(event.startAt)}</p>
+
+                {event.price != null && (
                     <p className="font-medium">
-                        {Number(event.price).toFixed(2)} {event.currency}
+                        {format.number(Number(event.price), {
+                            style: "currency",
+                            currency: event.currency || "USD"
+                        })}
                     </p>
                 )}
-                <div className={`mt-4 flex ${showEditButton ? 'justify-between' : 'justify-start'}`}>
+
+                <div className={`mt-4 flex ${showEditButton ? "justify-between" : "justify-start"}`}>
                     <Link
                         href={showEditButton ? `/dashboard/events/${event.id}` : `/events/${event.id}`}
                         className="inline-flex items-center rounded-xl px-4 py-2 text-[16px] font-semibold text-[#1f1d2a] shadow-sm bg-[#f6d44b]"
                     >
-                        View Details
+                        {t("viewDetails")}
                     </Link>
+
                     {showEditButton && (
                         <Link
                             href={`/dashboard/events/${event.id}/edit`}
                             className="inline-flex items-center rounded-xl px-4 py-2 text-[16px] font-semibold text-[#1f1d2a] shadow-sm bg-[#f6d44b]"
                         >
-                            Edit
+                            {t("edit")}
                         </Link>
                     )}
                 </div>
