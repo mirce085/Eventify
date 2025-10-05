@@ -59,7 +59,6 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Mission */}
             <section>
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
                     <h2 className="text-2xl font-semibold mb-4">{t("mission.title")}</h2>
@@ -67,7 +66,6 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Stats */}
             <section className="border-t border-white/10" style={{ background: "rgba(0,0,0,0.15)" }}>
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
                     <h2 className="text-2xl font-semibold mb-6">{t("stats.title")}</h2>

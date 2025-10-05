@@ -26,32 +26,32 @@ export default function TermsPage() {
 
             <section className="border-t border-white/10" style={{ background: "rgba(0,0,0,0.15)" }}>
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 space-y-8">
-                    {/* Use of Service */}
+
                     <div className="rounded-xl bg-[#2c2a38] p-6 ring-1 ring-white/10">
                         <h2 className="text-2xl font-semibold mb-2">{t("sections.use.title")}</h2>
                         <p className="text-white/80">{t("sections.use.body")}</p>
                     </div>
-                    {/* Accounts */}
+
                     <div className="rounded-xl bg-[#2c2a38] p-6 ring-1 ring-white/10">
                         <h2 className="text-2xl font-semibold mb-2">{t("sections.accounts.title")}</h2>
                         <p className="text-white/80">{t("sections.accounts.body")}</p>
                     </div>
-                    {/* Tickets and Refunds */}
+
                     <div className="rounded-xl bg-[#2c2a38] p-6 ring-1 ring-white/10">
                         <h2 className="text-2xl font-semibold mb-2">{t("sections.tickets.title")}</h2>
                         <p className="text-white/80">{t("sections.tickets.body")}</p>
                     </div>
-                    {/* Liability */}
+
                     <div className="rounded-xl bg-[#2c2a38] p-6 ring-1 ring-white/10">
                         <h2 className="text-2xl font-semibold mb-2">{t("sections.liability.title")}</h2>
                         <p className="text-white/80">{t("sections.liability.body")}</p>
                     </div>
-                    {/* Changes */}
+
                     <div className="rounded-xl bg-[#2c2a38] p-6 ring-1 ring-white/10">
                         <h2 className="text-2xl font-semibold mb-2">{t("sections.changes.title")}</h2>
                         <p className="text-white/80">{t("sections.changes.body")}</p>
                     </div>
-                    {/* Contact */}
+
                     <div className="rounded-xl bg-[#2c2a38] p-6 ring-1 ring-white/10">
                         <h2 className="text-2xl font-semibold mb-2">{t("sections.contact.title")}</h2>
                         <p className="text-white/80 mb-4">{t("sections.contact.body")}</p>

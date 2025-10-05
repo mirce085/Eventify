@@ -17,7 +17,6 @@ export async function GET() {
             }
         });
 
-        // Make sure you're returning the array directly
         return NextResponse.json(events);
     } catch (error) {
         console.error('Error fetching events:', error);
@@ -33,8 +32,6 @@ export async function POST(request: NextRequest) {
     try {
         const data = await request.json();
 
-        // In a real application, you would get the user ID from an authenticated session
-        // For now, we'll get the first user or create one if none exists
         let organizer = await prisma.user.findFirst();
 
         if (!organizer) {

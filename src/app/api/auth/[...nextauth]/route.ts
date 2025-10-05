@@ -48,7 +48,6 @@ export const authOptions = {
     ],
     pages: {
         signIn: '/auth/signin',
-        // You can define custom error, verification pages too
     },
     session: {
         strategy: "jwt" as const,

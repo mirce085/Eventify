@@ -16,7 +16,7 @@ export default function ContactPage() {
 
     return (
         <main className="min-h-screen bg-[#1f1d2a] text-white">
-            {/* Hero */}
+
             <section className="relative">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
                     <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">{t("title")}</h1>
@@ -24,7 +24,6 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            {/* Contact Cards */}
             <section className="border-t border-white/10" style={{ background: "rgba(0,0,0,0.15)" }}>
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="rounded-xl bg-[#2c2a38] p-6 ring-1 ring-white/10">

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Search, MapPin, ChevronDown } from "lucide-react";
+import { Search, MapPin } from "lucide-react";
 import { EventCard } from "@/components/features/shared/event-card";
 import { useEffect } from "react";
 import { useEventStore } from "@/stores/event-store";

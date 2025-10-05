@@ -4,7 +4,6 @@ import {getTranslations} from "next-intl/server";
 export default async function EventifyFooter() {
     const t = await getTranslations("footer");
     const year = new Date().getFullYear();
-    const brandYellow = "#f6d44b";
 
     return (
         <footer
