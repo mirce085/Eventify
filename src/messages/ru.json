@@ -26,6 +26,7 @@
     "createEvent": "Создать событие",
     "login": "Вход",
     "signUp": "Регистрация",
+    "signOut": "Выйти",
     "toggleMenu": "Переключить меню"
   },
   "about": {

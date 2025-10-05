@@ -26,6 +26,7 @@
     "createEvent": "Create Event",
     "login": "Login",
     "signUp": "Sign Up",
+    "signOut": "Sign Out",
     "toggleMenu": "Toggle menu"
   },
   "about": {
