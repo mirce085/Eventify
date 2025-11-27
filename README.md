@@ -2,9 +2,6 @@
 
 A modern, full-stack event management web application built with Next.js 15, TypeScript, and Prisma.  Eventify empowers event organizers to create and manage events seamlessly, while providing attendees with an intuitive interface to browse, book, and manage their event registrations.
 
-![TypeScript](https://img.shields. io/badge/TypeScript-92. 7%25-blue)
-![CSS](https://img.shields.io/badge/CSS-6.4%25-563d7c)
-![JavaScript](https://img.shields.io/badge/JavaScript-0.9%25-yellow)
 
 ## ✨ Features
 
