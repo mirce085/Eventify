@@ -1,36 +1,227 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎉 Eventify
 
-## Getting Started
+A modern, full-stack event management web application built with Next.js 15, TypeScript, and Prisma.  Eventify empowers event organizers to create and manage events seamlessly, while providing attendees with an intuitive interface to browse, book, and manage their event registrations.
 
-First, run the development server:
+![TypeScript](https://img.shields. io/badge/TypeScript-92. 7%25-blue)
+![CSS](https://img.shields.io/badge/CSS-6.4%25-563d7c)
+![JavaScript](https://img.shields.io/badge/JavaScript-0.9%25-yellow)
+
+## ✨ Features
+
+### For Event Organizers
+- 📝 **Create Events**: Design and publish events with comprehensive details
+- 🎨 **Cover Images**: Add visual appeal with event cover images
+- 💰 **Pricing Control**: Set event prices with multi-currency support
+- 📍 **Location Management**: Specify event venues and locations
+- ⏰ **Schedule Management**: Define start and end times for events
+- ✏️ **Event Updates**: Edit and update event information in real-time
+
+### For Attendees
+- 🔍 **Browse Events**: Discover events through an intuitive interface
+- 📅 **Event Details**: View comprehensive information about each event
+- 🎫 **Booking System**: Reserve spots at events
+- ❌ **Cancel Bookings**: Manage registrations with easy cancellation
+
+### Security & Authentication
+- 🔐 **JWT Authentication**: Secure user authentication using NextAuth.js
+- 🔒 **Password Hashing**: Industry-standard bcrypt password encryption
+- 👤 **User Management**: Profile creation and management
+- 🛡️ **Protected Routes**: Secure endpoints for authenticated users only
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework**: [Next.js 15. 5.2](https://nextjs. org/) with React 19
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 4 with custom animations
+- **UI Components**: Radix UI primitives
+- **Icons**: Lucide React
+- **Forms**: React Hook Form with Zod validation
+- **State Management**: Zustand
+- **Internationalization**: next-intl
+
+### Backend
+- **Database**: PostgreSQL
+- **ORM**: Prisma 6.16
+- **Authentication**: NextAuth.js 4
+- **Password Hashing**: bcryptjs
+
+### Developer Tools
+- **Linting**: ESLint 9
+- **Build Tool**: Next.js Turbopack
+- **Type Safety**: TypeScript strict mode
+
+## 📋 Prerequisites
+
+Before running this project, ensure you have:
+
+- Node.js 20.x or higher
+- PostgreSQL database
+- npm or yarn package manager
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/mirce085/Eventify.git
+cd Eventify
+```
+
+### 2.  Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Environment Setup
+
+Create a `.env` file in the root directory with the following variables:
+
+```env
+# Database
+DATABASE_URL="postgresql://user:password@localhost:5432/eventify"
+
+# NextAuth
+NEXTAUTH_URL="http://localhost:3000"
+NEXTAUTH_SECRET="your-secret-key-here"
+
+# Add other required environment variables
+```
+
+### 4. Database Setup
+
+Run Prisma migrations to set up your database schema:
+
+```bash
+npx prisma migrate dev
+```
+
+### 5.  Seed the Database (Optional)
+
+Populate your database with sample data:
+
+```bash
+npm run seed
+```
+
+### 6. Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+Eventify/
+├── prisma/
+│   ├── schema.prisma      # Database schema
+│   └── seed.ts            # Database seeding script
+├── public/                # Static assets
+├── src/
+│   ├── app/              # Next.js app directory
+│   ├── components/       # React components
+│   ├── i18n/            # Internationalization config
+│   ├── messages/        # Translation files
+│   ├── prisma/          # Prisma client utilities
+│   ├── stores/          # Zustand state stores
+│   └── middleware.ts    # Next.js middleware
+├── .gitignore
+├── next.config.ts       # Next.js configuration
+├── package.json
+├── tailwind.config.js   # Tailwind CSS configuration
+└── tsconfig.json        # TypeScript configuration
+```
 
-## Learn More
+## 🗄️ Database Schema
 
-To learn more about Next.js, take a look at the following resources:
+### User Model
+- Unique email authentication
+- Password hashing
+- Profile information (name, image)
+- Relationship with created events
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Event Model
+- Comprehensive event details
+- Date and time management
+- Pricing with currency support
+- Cover image support
+- Organizer relationship
+- Automatic timestamps
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎯 Available Scripts
 
-## Deploy on Vercel
+```bash
+# Development server with Turbopack
+npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Production build
+npm run build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Start production server
+npm start
+
+# Run ESLint
+npm run lint
+
+# Seed database
+npm run seed
+```
+
+## 🔐 Authentication Flow
+
+1. **Sign Up**: Users create accounts with email and password
+2. **Password Hashing**: Passwords are encrypted using bcrypt
+3. **JWT Tokens**: Session management via NextAuth.js
+4. **Protected Routes**: Middleware secures authenticated endpoints
+5. **Session Persistence**: Automatic token refresh
+
+## 🌍 Internationalization
+
+Eventify supports multiple languages through next-intl.  Language files are located in `src/messages/`.
+
+## 🎨 UI Components
+
+Built with Radix UI primitives for accessibility and customization:
+- Dialogs and Modals
+- Dropdowns and Menus
+- Forms and Inputs
+- Navigation Components
+- Data Display (Cards, Avatars, etc.)
+- Feedback Components (Toasts via Sonner)
+
+## 🚧 Future Enhancements
+
+- [ ] Payment integration (Stripe/PayPal)
+- [ ] Email notifications
+- [ ] Calendar sync (Google Calendar, iCal)
+- [ ] Social media sharing
+- [ ] Event reviews and ratings
+- [ ] Advanced search and filtering
+- [ ] Mobile app version
+- [ ] Analytics dashboard for organizers
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is private and maintained by [mirce085](https://github.com/mirce085). 
+
+## 📧 Contact
+
+For questions or support, please open an issue on GitHub.
+
+---
+
+Built with ❤️ using Next.js, TypeScript, and Prisma
