@@ -1,6 +1,6 @@
 # 🎉 Eventify
 
-A modern, full-stack event management web application built with Next.js 15, TypeScript, and Prisma.  Eventify empowers event organizers to create and manage events seamlessly, while providing attendees with an intuitive interface to browse, book, and manage their event registrations.
+A modern, full-stack event management web application built with Next.js 15, TypeScript, and Prisma.  Eventify empowers event organizers to create and manage events seamlessly, while providing attendees with an intuitive interface to browse and discover events.
 
 
 ## ✨ Features
@@ -16,8 +16,6 @@ A modern, full-stack event management web application built with Next.js 15, Typ
 ### For Attendees
 - 🔍 **Browse Events**: Discover events through an intuitive interface
 - 📅 **Event Details**: View comprehensive information about each event
-- 🎫 **Booking System**: Reserve spots at events
-- ❌ **Cancel Bookings**: Manage registrations with easy cancellation
 
 ### Security & Authentication
 - 🔐 **JWT Authentication**: Secure user authentication using NextAuth.js
@@ -28,7 +26,7 @@ A modern, full-stack event management web application built with Next.js 15, Typ
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **Framework**: [Next.js 15. 5.2](https://nextjs. org/) with React 19
+- **Framework**: [Next.js 15.5. 2](https://nextjs.org/) with React 19
 - **Language**: TypeScript 5
 - **Styling**: Tailwind CSS 4 with custom animations
 - **UI Components**: Radix UI primitives
@@ -45,14 +43,14 @@ A modern, full-stack event management web application built with Next.js 15, Typ
 
 ### Developer Tools
 - **Linting**: ESLint 9
-- **Build Tool**: Next.js Turbopack
+- **Build Tool**: Next. js Turbopack
 - **Type Safety**: TypeScript strict mode
 
 ## 📋 Prerequisites
 
 Before running this project, ensure you have:
 
-- Node.js 20.x or higher
+- Node.js 20. x or higher
 - PostgreSQL database
 - npm or yarn package manager
 
@@ -94,7 +92,7 @@ Run Prisma migrations to set up your database schema:
 npx prisma migrate dev
 ```
 
-### 5.  Seed the Database (Optional)
+### 5. Seed the Database (Optional)
 
 Populate your database with sample data:
 
@@ -170,7 +168,7 @@ npm run seed
 
 ## 🔐 Authentication Flow
 
-1. **Sign Up**: Users create accounts with email and password
+1.  **Sign Up**: Users create accounts with email and password
 2. **Password Hashing**: Passwords are encrypted using bcrypt
 3. **JWT Tokens**: Session management via NextAuth.js
 4. **Protected Routes**: Middleware secures authenticated endpoints
@@ -192,6 +190,8 @@ Built with Radix UI primitives for accessibility and customization:
 
 ## 🚧 Future Enhancements
 
+- [ ] Booking system for event registration
+- [ ] Booking cancellation management
 - [ ] Payment integration (Stripe/PayPal)
 - [ ] Email notifications
 - [ ] Calendar sync (Google Calendar, iCal)
@@ -213,11 +213,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 License
 
-This project is private and maintained by [mirce085](https://github.com/mirce085). 
+This project is private and maintained by [mirce085](https://github.com/mirce085).
 
 ## 📧 Contact
 
-For questions or support, please open an issue on GitHub.
+For questions or support, please open an issue on GitHub. 
 
 ---
 
